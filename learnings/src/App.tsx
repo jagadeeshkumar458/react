@@ -1,5 +1,6 @@
 import './App.css';
 import Button from './Typescript/Components/Button';
+import Container from './Typescript/Components/Container';
 import Greet from './Typescript/Components/Greet';
 import Heading from './Typescript/Components/Heading';
 import Input from './Typescript/Components/Input';
@@ -37,6 +38,7 @@ function App() {
       <Greet name='Jagadeesh' isLoggedIn={true} />
       <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
       <Input value="" handleChange={(event) => console.log(event)}/>
+      <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
     </div>
   );
 }
