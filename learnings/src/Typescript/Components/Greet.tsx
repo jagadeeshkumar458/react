@@ -2,14 +2,15 @@ import React from 'react'
 
 type Greekprops = {
     name: string
-    messageCount: number
+    messageCount?: number
     isLoggedIn: boolean
 }
 
 function Greet(props : Greekprops) {
+  let {messageCount = 0} = props;
   return (
     <div>
-      {props.isLoggedIn ? `Welcome ${props.name}, you have ${props.messageCount} unread messages` : `Welcome Guest`}
+      {props.isLoggedIn ? `Welcome ${props.name}, you have ${messageCount} unread messages` : `Welcome Guest`}
     </div>
   )
 }

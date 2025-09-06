@@ -1,7 +1,10 @@
 import './App.css';
 import Greet from './Typescript/Components/Greet';
+import Heading from './Typescript/Components/Heading';
+import Oscar from './Typescript/Components/Oscar';
 import Person from './Typescript/Components/Person';
 import PersonList from './Typescript/Components/PersonList';
+import Status from './Typescript/Components/Status';
 
 function App() {
   const name = {
@@ -26,6 +29,10 @@ function App() {
       <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
       <Person name={name}/>
       <PersonList names={namesList}/>
+      <Status status="loading"/>
+      <Heading>Children Props</Heading>
+      <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
+      <Greet name='Jagadeesh' isLoggedIn={true} />
     </div>
   );
 }
