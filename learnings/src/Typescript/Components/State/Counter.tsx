@@ -4,9 +4,16 @@ type CounterState = {
     count: number
 }
 
-type CounterAction = {
-    type: string
+// DISCRIMINATED UNIONS
+type CounterAction = UpdateAction | ResetAction
+
+type UpdateAction = {
+    type: "Increment" | "Decrement"
     payload: number
+}
+
+type ResetAction = {
+    type: "Reset"
 }
 
 const initialState = {
@@ -19,6 +26,8 @@ function reducer(state: CounterState, action: CounterAction) {
       return { count: state.count + action.payload };
     case "Decrement":
       return { count: state.count - action.payload };
+    case "Reset":
+      return initialState
     default:
       return state;
   }
@@ -30,7 +39,7 @@ function Counter() {
       Count: {state.count}
       <button onClick={() => dispatch({type: "Increment", payload: 10})}>Increment</button>
       <button onClick={() => dispatch({type: "Decrement", payload: 10})}>Decrement</button>
-    </div>
+      <button onClick={() => dispatch({type: "Reset"})}>Reset</button>    </div>
   );
 }
 
