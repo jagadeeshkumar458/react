@@ -1,6 +1,7 @@
 import './App.css';
 import Button from './Typescript/Components/Button';
 import Container from './Typescript/Components/Container';
+import Box from './Typescript/Components/Context/Box';
 import Greet from './Typescript/Components/Greet';
 import Heading from './Typescript/Components/Heading';
 import Input from './Typescript/Components/Input';
@@ -43,6 +44,7 @@ function App() {
       <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
       <User />
       <Counter />
+      <Box />
     </div>
   );
 }
