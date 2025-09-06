@@ -1,6 +1,8 @@
 import './App.css';
+import Button from './Typescript/Components/Button';
 import Greet from './Typescript/Components/Greet';
 import Heading from './Typescript/Components/Heading';
+import Input from './Typescript/Components/Input';
 import Oscar from './Typescript/Components/Oscar';
 import Person from './Typescript/Components/Person';
 import PersonList from './Typescript/Components/PersonList';
@@ -33,6 +35,8 @@ function App() {
       <Heading>Children Props</Heading>
       <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
       <Greet name='Jagadeesh' isLoggedIn={true} />
+      <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
+      <Input value="" handleChange={(event) => console.log(event)}/>
     </div>
   );
 }
