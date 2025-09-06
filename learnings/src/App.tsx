@@ -7,6 +7,7 @@ import Input from './Typescript/Components/Input';
 import Oscar from './Typescript/Components/Oscar';
 import Person from './Typescript/Components/Person';
 import PersonList from './Typescript/Components/PersonList';
+import Counter from './Typescript/Components/State/Counter';
 import User from './Typescript/Components/State/User';
 import Status from './Typescript/Components/Status';
 
@@ -41,6 +42,7 @@ function App() {
       <Input value="" handleChange={(event) => console.log(event)}/>
       <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
       <User />
+      <Counter />
     </div>
   );
 }
