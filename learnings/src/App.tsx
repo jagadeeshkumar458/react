@@ -8,12 +8,13 @@ import Input from './Typescript/Components/Input';
 import Oscar from './Typescript/Components/Oscar';
 import Person from './Typescript/Components/Person';
 import PersonList from './Typescript/Components/PersonList';
-import Counter from './Typescript/Components/State/Counter';
+// import Counter from './Typescript/Components/State/Counter';
 // import User from './Typescript/Components/State/User';
 import Status from './Typescript/Components/Status';
 import { UserContextProvider } from './Typescript/Components/Context/UserContext';
 import User from './Typescript/Components/Context/User';
 import Mutableref from './Typescript/Components/Ref/MutableRef';
+import Counter from './Typescript/Components/Class/Counter';
 
 function App() {
   const name = {
@@ -46,12 +47,13 @@ function App() {
       <Input value="" handleChange={(event) => console.log(event)}/>
       <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
       {/* <User /> */}
-      <Counter />
+      {/* <Counter /> */}
       <Box />
       <UserContextProvider>
         <User />
       </UserContextProvider>
       <Mutableref />
+      <Counter message="The count value is " />
     </div>
   );
 }
