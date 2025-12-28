@@ -12,6 +12,9 @@ import Counter from './Typescript/Components/State/Counter';
 import User from './Typescript/Components/State/User';
 import Status from './Typescript/Components/Status';
 
+
+// Test Comments
+
 function App() {
   const name = {
     first : 'Bruce',
