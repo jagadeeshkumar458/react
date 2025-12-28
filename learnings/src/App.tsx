@@ -16,6 +16,7 @@ import User from './Typescript/Components/Context/User';
 import Mutableref from './Typescript/Components/Ref/MutableRef';
 import Counter from './Typescript/Components/Class/Counter';
 import Private from './Typescript/Components/Auth/Private';
+import List from './Typescript/Components/Generics/List';
 
 function App() {
   const name = {
@@ -56,6 +57,9 @@ function App() {
       <Mutableref />
       <Counter message="The count value is " />
       <Private isLoggedIn={true} component={User} />
+      {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
+      <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
+      <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
     </div>
   );
 }
