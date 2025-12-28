@@ -17,6 +17,7 @@ import Mutableref from './Typescript/Components/Ref/MutableRef';
 import Counter from './Typescript/Components/Class/Counter';
 import Private from './Typescript/Components/Auth/Private';
 import List from './Typescript/Components/Generics/List';
+import RandomNumbers from './Typescript/Components/Restriction/RandomNumbers';
 
 function App() {
   const name = {
@@ -60,6 +61,9 @@ function App() {
       {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
       <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
       <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
+      <RandomNumbers value={10} isPositive />
+      <RandomNumbers value={-10} isNegative />
+      <RandomNumbers value={0} isZero />
     </div>
   );
 }
