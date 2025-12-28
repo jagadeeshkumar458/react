@@ -9,11 +9,10 @@ import Oscar from './Typescript/Components/Oscar';
 import Person from './Typescript/Components/Person';
 import PersonList from './Typescript/Components/PersonList';
 import Counter from './Typescript/Components/State/Counter';
-import User from './Typescript/Components/State/User';
+// import User from './Typescript/Components/State/User';
 import Status from './Typescript/Components/Status';
-
-
-// Test Comments
+import { UserContextProvider } from './Typescript/Components/Context/UserContext';
+import User from './Typescript/Components/Context/User';
 
 function App() {
   const name = {
@@ -45,9 +44,12 @@ function App() {
       <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
       <Input value="" handleChange={(event) => console.log(event)}/>
       <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
-      <User />
+      {/* <User /> */}
       <Counter />
       <Box />
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
     </div>
   );
 }
