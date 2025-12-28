@@ -15,6 +15,7 @@ import { UserContextProvider } from './Typescript/Components/Context/UserContext
 import User from './Typescript/Components/Context/User';
 import Mutableref from './Typescript/Components/Ref/MutableRef';
 import Counter from './Typescript/Components/Class/Counter';
+import Private from './Typescript/Components/Auth/Private';
 
 function App() {
   const name = {
@@ -54,6 +55,7 @@ function App() {
       </UserContextProvider>
       <Mutableref />
       <Counter message="The count value is " />
+      <Private isLoggedIn={true} component={User} />
     </div>
   );
 }
