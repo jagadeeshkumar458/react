@@ -13,6 +13,7 @@ import Counter from './Typescript/Components/State/Counter';
 import Status from './Typescript/Components/Status';
 import { UserContextProvider } from './Typescript/Components/Context/UserContext';
 import User from './Typescript/Components/Context/User';
+import Mutableref from './Typescript/Components/Ref/MutableRef';
 
 function App() {
   const name = {
@@ -50,6 +51,7 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
+      <Mutableref />
     </div>
   );
 }
