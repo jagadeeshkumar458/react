@@ -18,6 +18,7 @@ import Counter from './Typescript/Components/Class/Counter';
 import Private from './Typescript/Components/Auth/Private';
 import List from './Typescript/Components/Generics/List';
 import RandomNumbers from './Typescript/Components/Restriction/RandomNumbers';
+import Toast from './Typescript/Components/TemplateLiterals/Toast';
 
 function App() {
   const name = {
@@ -64,6 +65,7 @@ function App() {
       <RandomNumbers value={10} isPositive />
       <RandomNumbers value={-10} isNegative />
       <RandomNumbers value={0} isZero />
+      <Toast position='top-left' />
     </div>
   );
 }
