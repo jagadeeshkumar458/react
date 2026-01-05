@@ -22,6 +22,7 @@ import Toast from './Typescript/Components/TemplateLiterals/Toast';
 import CustomButton from './Typescript/Components/HTML/Button';
 import CustomInput from './Typescript/Components/HTML/Input';
 import CustomComponent from './Typescript/Components/HTML/CustomComponent';
+import Test from './Typescript/Components/Polymorphic/Test';
 
 function App() {
   const name = {
@@ -72,6 +73,9 @@ function App() {
       <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
       <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
       <CustomComponent name='Custom Component' isLoggedIn/>
+      <Test as="h1" size='lg' >Heading</Test>
+      <Test as="p" size='md' color='secondary'>Paragraph</Test>
+      <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
     </div>
   );
 }
