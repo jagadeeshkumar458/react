@@ -21,6 +21,7 @@ import RandomNumbers from './Typescript/Components/Restriction/RandomNumbers';
 import Toast from './Typescript/Components/TemplateLiterals/Toast';
 import CustomButton from './Typescript/Components/HTML/Button';
 import CustomInput from './Typescript/Components/HTML/Input';
+import CustomComponent from './Typescript/Components/HTML/CustomComponent';
 
 function App() {
   const name = {
@@ -70,6 +71,7 @@ function App() {
       <Toast position='top-left' />
       <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
       <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
+      <CustomComponent name='Custom Component' isLoggedIn/>
     </div>
   );
 }
