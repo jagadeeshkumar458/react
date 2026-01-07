@@ -8,6 +8,7 @@ function Application() {
     <p>All fields are mandatory</p>
     <span title='close'>x</span>
     <img src='https://via.placeholder.com/150' alt='Placeholder Image' />
+    <div data-testid='custom-element'>Custom HTML Element</div>
     <form>
         <div>
             <label htmlFor="username">Username:</label>

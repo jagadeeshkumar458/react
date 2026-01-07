@@ -21,6 +21,9 @@ describe('Application', () => {
         const imgElement = screen.getByAltText(/placeholder image/i);
         expect(imgElement).toBeInTheDocument();
 
+        const customElement = screen.getByTestId('custom-element');
+        expect(customElement).toBeInTheDocument();
+
         const nameElement = screen.getByRole('textbox', {name: /username/i});
         expect(nameElement).toBeInTheDocument();
 
