@@ -12,6 +12,9 @@ describe('Application', () => {
         const sectionHeading = screen.getByRole('heading', {level: 2, name: /fill the form below to apply/i});
         expect(sectionHeading).toBeInTheDocument();
 
+        const paraElement = screen.getByText(/all fields are mandatory/i);
+        expect(paraElement).toBeInTheDocument();
+
         const nameElement = screen.getByRole('textbox', {name: /username/i});
         expect(nameElement).toBeInTheDocument();
 
