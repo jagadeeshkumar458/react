@@ -44,6 +44,7 @@ function App() {
   ]
   return (
     <div className="App">
+      Learn React
       <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
       <Person name={name}/>
       <PersonList names={namesList}/>
