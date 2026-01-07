@@ -11,9 +11,12 @@ describe('Application', () => {
         
         const sectionHeading = screen.getByRole('heading', {level: 2, name: /fill the form below to apply/i});
         expect(sectionHeading).toBeInTheDocument();
-        
+
         const nameElement = screen.getByRole('textbox', {name: /username/i});
         expect(nameElement).toBeInTheDocument();
+
+        const nameElement2 = screen.getByLabelText(/username/i, {selector: 'input'});
+        expect(nameElement2).toBeInTheDocument();
 
         const bioElement = screen.getByRole('textbox', {name: /bio/i});
         expect(bioElement).toBeInTheDocument();
@@ -23,6 +26,9 @@ describe('Application', () => {
 
         const termsElement = screen.getByRole('checkbox');
         expect(termsElement).toBeInTheDocument();
+
+        const termsElement2 = screen.getByLabelText(/I agree to the terms and conditions/i);
+        expect(termsElement2).toBeInTheDocument();
 
         const buttonElement = screen.getByRole('button');
         expect(buttonElement).toBeInTheDocument();

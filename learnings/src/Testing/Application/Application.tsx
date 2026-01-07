@@ -15,7 +15,7 @@ function Application() {
             <textarea id='bio' name='bio' rows={4} cols={50} />
         </div>
         <div>
-            <label htmlFor='job-location'>Job Location:</label>
+            <label htmlFor='job-location'>Username:</label>
             <select id='job-location' name='job-location'>
                 <option value=''>Select a country</option>
                 <option value='in'>India</option>
