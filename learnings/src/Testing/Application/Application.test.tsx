@@ -15,6 +15,9 @@ describe('Application', () => {
         const paraElement = screen.getByText(/all fields are mandatory/i);
         expect(paraElement).toBeInTheDocument();
 
+        const closeElement = screen.getByTitle(/close/i);
+        expect(closeElement).toBeInTheDocument();
+
         const imgElement = screen.getByAltText(/placeholder image/i);
         expect(imgElement).toBeInTheDocument();
 

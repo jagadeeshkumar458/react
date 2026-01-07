@@ -6,6 +6,7 @@ function Application() {
     <h1>Application Form </h1>
     <h2>Fill the form below to apply</h2>
     <p>All fields are mandatory</p>
+    <span title='close'>x</span>
     <img src='https://via.placeholder.com/150' alt='Placeholder Image' />
     <form>
         <div>
