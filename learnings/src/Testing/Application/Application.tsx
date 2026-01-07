@@ -9,7 +9,7 @@ function Application() {
     <form>
         <div>
             <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder='Full name'/>
+            <input type="text" id="username" name="username" placeholder='Full name' value='Jagadeesh' onChange={() => {}}/>
         </div>
         <div>
             <label htmlFor='bio'>Bio:</label>
