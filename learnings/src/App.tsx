@@ -23,6 +23,7 @@ import CustomButton from './Typescript/Components/HTML/Button';
 import CustomInput from './Typescript/Components/HTML/Input';
 import CustomComponent from './Typescript/Components/HTML/CustomComponent';
 import Test from './Typescript/Components/Polymorphic/Test';
+import Application from './Testing/Application/Application';
 
 function App() {
   const name = {
@@ -77,6 +78,7 @@ function App() {
       <Test as="h1" size='lg' >Heading</Test>
       <Test as="p" size='md' color='secondary'>Paragraph</Test>
       <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
+      <Application />
     </div>
   );
 }
