@@ -26,6 +26,8 @@ import Test from './Typescript/Components/Polymorphic/Test';
 import Application from './Testing/Application/Application';
 import Skills from './Testing/Skills/Skills';
 import Counter from './Testing/Counter/Counter';
+import AppProviders from './Testing/Providers/app-providers';
+import MuiMode from './Testing/mui/mui-mode';
 
 function App() {
   const name = {
@@ -46,44 +48,47 @@ function App() {
   }
   ]
   return (
-    <div className="App">
-      Learn React
-      <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
-      <Person name={name}/>
-      <PersonList names={namesList}/>
-      <Status status="loading"/>
-      <Heading>Children Props</Heading>
-      <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
-      <Greet name='Jagadeesh' isLoggedIn={true} />
-      <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
-      <Input value="" handleChange={(event) => console.log(event)}/>
-      <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
-      {/* <User /> */}
-      {/* <Counter /> */}
-      <Box />
-      <UserContextProvider>
-        <User />
-      </UserContextProvider>
-      <Mutableref />
-      {/* <Counter message="The count value is " /> */}
-      <Private isLoggedIn={true} component={User} />
-      {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
-      <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
-      <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
-      <RandomNumbers value={10} isPositive />
-      <RandomNumbers value={-10} isNegative />
-      <RandomNumbers value={0} isZero />
-      <Toast position='top-left' />
-      <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
-      <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
-      <CustomComponent name='Custom Component' isLoggedIn/>
-      <Test as="h1" size='lg' >Heading</Test>
-      <Test as="p" size='md' color='secondary'>Paragraph</Test>
-      <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
-      <Application />
-      <Skills skills={['HTML', 'CSS', 'JS', 'React']} />
-      <Counter />
-    </div>
+    <AppProviders>
+      <div className="App">
+        Learn React
+        <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
+        <Person name={name}/>
+        <PersonList names={namesList}/>
+        <Status status="loading"/>
+        <Heading>Children Props</Heading>
+        <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
+        <Greet name='Jagadeesh' isLoggedIn={true} />
+        <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
+        <Input value="" handleChange={(event) => console.log(event)}/>
+        <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
+        {/* <User /> */}
+        {/* <Counter /> */}
+        <Box />
+        <UserContextProvider>
+          <User />
+        </UserContextProvider>
+        <Mutableref />
+        {/* <Counter message="The count value is " /> */}
+        <Private isLoggedIn={true} component={User} />
+        {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
+        <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
+        <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
+        <RandomNumbers value={10} isPositive />
+        <RandomNumbers value={-10} isNegative />
+        <RandomNumbers value={0} isZero />
+        <Toast position='top-left' />
+        <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
+        <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
+        <CustomComponent name='Custom Component' isLoggedIn/>
+        <Test as="h1" size='lg' >Heading</Test>
+        <Test as="p" size='md' color='secondary'>Paragraph</Test>
+        <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
+        <Application />
+        <Skills skills={['HTML', 'CSS', 'JS', 'React']} />
+        <Counter />
+        <MuiMode />
+      </div>
+    </AppProviders>
   );
 }
 
