@@ -26,4 +26,10 @@ describe('Skills',() => {
         const buttonElement = screen.queryByRole('button', {name: /start lending/i});
         expect(buttonElement).not.toBeInTheDocument();
     })
+
+    test('start leaning button is eventually rendered', async () => {
+        render(<Skills skills={skills} />);
+        const buttonElement = await screen.findByRole('button', {name: /start learning/i}, {timeout: 2000});
+        expect(buttonElement).toBeInTheDocument();
+    })
 })
