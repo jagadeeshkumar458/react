@@ -14,7 +14,7 @@ import Status from './Typescript/Components/Status';
 import { UserContextProvider } from './Typescript/Components/Context/UserContext';
 import User from './Typescript/Components/Context/User';
 import Mutableref from './Typescript/Components/Ref/MutableRef';
-import Counter from './Typescript/Components/Class/Counter';
+// import Counter from './Typescript/Components/Class/Counter';
 import Private from './Typescript/Components/Auth/Private';
 import List from './Typescript/Components/Generics/List';
 import RandomNumbers from './Typescript/Components/Restriction/RandomNumbers';
@@ -25,6 +25,7 @@ import CustomComponent from './Typescript/Components/HTML/CustomComponent';
 import Test from './Typescript/Components/Polymorphic/Test';
 import Application from './Testing/Application/Application';
 import Skills from './Testing/Skills/Skills';
+import Counter from './Testing/Counter/Counter';
 
 function App() {
   const name = {
@@ -64,7 +65,7 @@ function App() {
         <User />
       </UserContextProvider>
       <Mutableref />
-      <Counter message="The count value is " />
+      {/* <Counter message="The count value is " /> */}
       <Private isLoggedIn={true} component={User} />
       {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
       <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
@@ -81,6 +82,7 @@ function App() {
       <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
       <Application />
       <Skills skills={['HTML', 'CSS', 'JS', 'React']} />
+      <Counter />
     </div>
   );
 }
