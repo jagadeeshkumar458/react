@@ -15,6 +15,9 @@ describe('Application', () => {
         const paraElement = screen.getByText(/all fields are mandatory/i);
         expect(paraElement).toBeInTheDocument();
 
+        const paraElement2 = screen.getByText((content) => content.startsWith('All'));
+        expect(paraElement2).toBeInTheDocument();   
+
         const closeElement = screen.getByTitle(/close/i);
         expect(closeElement).toBeInTheDocument();
 
