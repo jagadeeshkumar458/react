@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --coverage --watchAll=false --collectCoverageFrom='src/Testing/**/*.{ts,tsx}' --collectCoverageFrom='src/Testing/**/*.{types,stories,constants,test,spec}.{ts,tsx}'"
+    "coverage": "react-scripts test --coverage --watchAll=false --collectCoverageFrom='src/Testing/**/*.{ts,tsx}' --collectCoverageFrom='src/Testing/**/*.{types,stories,constants,test,spec}.{ts,tsx}'",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +57,7 @@
     }
   },
   "devDependencies": {
-    "msw": "^2.12.7"
+    "msw": "^2.12.7",
+    "husky": "^8.0.0"
   }
 }
