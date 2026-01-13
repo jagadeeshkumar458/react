@@ -31,6 +31,7 @@ import AppProviders from './Testing/Providers/app-providers';
 import MuiMode from './Testing/mui/mui-mode';
 import Home from './Router/Home';
 import About from './Router/About';
+import Navbar from './Router/Navbar';
 
 function App() {
   const name = {
@@ -92,10 +93,11 @@ function App() {
         <Counter />
         <MuiMode />
       </div>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='about' element={<About />}></Route>
-        </Routes>
+      </Routes>
     </AppProviders>
 
   );
