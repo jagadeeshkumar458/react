@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Button from './Typescript/Components/Button';
 import Container from './Typescript/Components/Container';
 import Box from './Typescript/Components/Context/Box';
@@ -28,6 +29,8 @@ import Skills from './Testing/Skills/Skills';
 import Counter from './Testing/Counter/Counter';
 import AppProviders from './Testing/Providers/app-providers';
 import MuiMode from './Testing/mui/mui-mode';
+import Home from './Router/Home';
+import About from './Router/About';
 
 function App() {
   const name = {
@@ -48,6 +51,7 @@ function App() {
   }
   ]
   return (
+    
     <AppProviders>
       <div className="App">
         Learn React
@@ -88,7 +92,12 @@ function App() {
         <Counter />
         <MuiMode />
       </div>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='about' element={<About />}></Route>
+        </Routes>
     </AppProviders>
+
   );
 }
 
