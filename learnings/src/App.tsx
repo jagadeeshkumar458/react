@@ -32,6 +32,7 @@ import MuiMode from './Testing/mui/mui-mode';
 import Home from './Router/Home';
 import About from './Router/About';
 import Navbar from './Router/Navbar';
+import OrderSummary from './Router/OrderSummary';
 
 function App() {
   const name = {
@@ -97,6 +98,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='about' element={<About />}></Route>
+        <Route path='summary' element={<OrderSummary />}></Route>
       </Routes>
     </AppProviders>
 
