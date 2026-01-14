@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-  const navLinkStyles = ({ isActive }) => {
+  const navLinkStyles = ({ isActive }: any) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
       textDecoration: isActive ? "none" : "underline",

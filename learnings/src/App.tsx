@@ -34,9 +34,12 @@ import About from './Router/About';
 import Navbar from './Router/Navbar';
 import OrderSummary from './Router/OrderSummary';
 import NoMatch from './Router/NoMatch';
-import Products from './Router/Products'
+import Products from './Router/Products';
 import FeaturedProducts from './Router/FeaturedProducts';
 import NewProducts from './Router/NewProducts';
+import { Users } from './Router/Users';
+import { UserDetails } from './Router/UserDetails';
+import { Admin } from './Router/Admin';
 
 function App() {
   const name = {
@@ -108,6 +111,10 @@ function App() {
           <Route index element={<FeaturedProducts />} />
           <Route path='featured' element={<FeaturedProducts />}/>
           <Route path='new' element={<NewProducts />} />
+        </Route>
+        <Route path='users' element={<Users />}>
+        <Route path=':userId' element={<UserDetails />} />
+        <Route path='admin' element={<Admin />} />
         </Route>
       </Routes>
     </AppProviders>
