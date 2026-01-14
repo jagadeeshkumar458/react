@@ -16,6 +16,7 @@ function Navbar() {
       <NavLink style={navLinkStyles} to="/about">
         About
       </NavLink>
+      <NavLink to="/products"></NavLink>
     </nav>
   );
 }

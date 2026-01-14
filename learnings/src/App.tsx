@@ -34,6 +34,9 @@ import About from './Router/About';
 import Navbar from './Router/Navbar';
 import OrderSummary from './Router/OrderSummary';
 import NoMatch from './Router/NoMatch';
+import Products from './Router/Products'
+import FeaturedProducts from './Router/FeaturedProducts';
+import NewProducts from './Router/NewProducts';
 
 function App() {
   const name = {
@@ -101,6 +104,10 @@ function App() {
         <Route path='about' element={<About />}></Route>
         <Route path='summary' element={<OrderSummary />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
+        <Route path='products' element={<Products />}>
+          <Route path='featured' element={<FeaturedProducts />}/>
+          <Route path='new' element={<NewProducts />} />
+        </Route>
       </Routes>
     </AppProviders>
 
