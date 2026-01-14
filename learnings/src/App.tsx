@@ -41,6 +41,10 @@ import { Users } from './Router/Users';
 import { UserDetails } from './Router/UserDetails';
 import { Admin } from './Router/Admin';
 import { lazy, Suspense } from 'react';
+import Profiles from './Router/Profiles';
+import { AuthProvider } from './Router/Auth';
+import Login from './Router/Login';
+import RequireAuth from './Router/RequireAuth';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -63,65 +67,67 @@ function App() {
   }
   ]
   return (
-    
-    <AppProviders>
-      <div className="App">
-        Learn React
-        <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
-        <Person name={name}/>
-        <PersonList names={namesList}/>
-        <Status status="loading"/>
-        <Heading>Children Props</Heading>
-        <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
-        <Greet name='Jagadeesh' isLoggedIn={true} />
-        <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
-        <Input value="" handleChange={(event) => console.log(event)}/>
-        <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
-        {/* <User /> */}
-        {/* <Counter /> */}
-        <Box />
-        <UserContextProvider>
-          <User />
-        </UserContextProvider>
-        <Mutableref />
-        {/* <Counter message="The count value is " /> */}
-        <Private isLoggedIn={true} component={User} />
-        {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
-        <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
-        <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
-        <RandomNumbers value={10} isPositive />
-        <RandomNumbers value={-10} isNegative />
-        <RandomNumbers value={0} isZero />
-        <Toast position='top-left' />
-        <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
-        <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
-        <CustomComponent name='Custom Component' isLoggedIn/>
-        <Test as="h1" size='lg' >Heading</Test>
-        <Test as="p" size='md' color='secondary'>Paragraph</Test>
-        <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
-        <Application />
-        <Skills skills={['HTML', 'CSS', 'JS', 'React']} />
-        <Counter />
-        <MuiMode />
-      </div>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='about' element={<Suspense fallback='Loading....'> <About /> </Suspense>}></Route>
-        <Route path='summary' element={<OrderSummary />}></Route>
-        <Route path='*' element={<NoMatch />}></Route>
-        <Route path='products' element={<Products />}>
-          <Route index element={<FeaturedProducts />} />
-          <Route path='featured' element={<FeaturedProducts />}/>
-          <Route path='new' element={<NewProducts />} />
-        </Route>
-        <Route path='users' element={<Users />}>
-        <Route path=':userId' element={<UserDetails />} />
-        <Route path='admin' element={<Admin />} />
-        </Route>
-      </Routes>
-    </AppProviders>
-
+    <AuthProvider>
+      <AppProviders>
+        {/* <div className="App">
+          Learn React
+          <Greet name='Jagadeesh' messageCount={20} isLoggedIn={false}/>
+          <Person name={name}/>
+          <PersonList names={namesList}/>
+          <Status status="loading"/>
+          <Heading>Children Props</Heading>
+          <Oscar><Heading>Oscar goes to Nolan</Heading></Oscar>
+          <Greet name='Jagadeesh' isLoggedIn={true} />
+          <Button handleClick={(event, id) => console.log('Button Clicked', event, id)} />
+          <Input value="" handleChange={(event) => console.log(event)}/>
+          <Container styles={{ border: '1px solid black', padding: '1rem'}}/>
+          {/* <User /> */}
+          {/* <Counter /> */}
+          {/* <Box />
+          <UserContextProvider>
+            <User />
+          </UserContextProvider>
+          <Mutableref /> */}
+          {/* <Counter message="The count value is " /> */}
+          {/* <Private isLoggedIn={true} component={User} /> */}
+          {/* <List items={['Batman', 'Superman', 'Wonder Woman']} onClick={(item) => console.log(item)} />
+          <List items={[1,2,3]} onClick={(item) => console.log(item)} /> */}
+          {/* <List items={[{ id: 1, first: 'Bruce', last: 'Wayne' }, { id: 2, first: 'Clark', last: 'Kent' }, { id: 3, first: 'Princess', last: 'Diana' }]} onClick={(item) => console.log(item)} />
+          <RandomNumbers value={10} isPositive />
+          <RandomNumbers value={-10} isNegative />
+          <RandomNumbers value={0} isZero />
+          <Toast position='top-left' />
+          <CustomButton variant='primary' onClick={() => console.log('Button clicked')} >Custom Button</CustomButton>
+          <CustomInput type='text' value='' onChange={() => console.log('Input changed')} />
+          <CustomComponent name='Custom Component' isLoggedIn/>
+          <Test as="h1" size='lg' >Heading</Test>
+          <Test as="p" size='md' color='secondary'>Paragraph</Test>
+          <Test as="label" htmlFor='someId' size='sm' color='secondary'>Label</Test>
+          <Application />
+          <Skills skills={['HTML', 'CSS', 'JS', 'React']} />
+          <Counter />
+          <MuiMode />
+        </div>  */}
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='about' element={<Suspense fallback='Loading....'> <About /> </Suspense>}></Route>
+          <Route path='summary' element={<OrderSummary />}></Route>
+          <Route path='*' element={<NoMatch />}></Route>
+          <Route path='products' element={<Products />}>
+            <Route index element={<FeaturedProducts />} />
+            <Route path='featured' element={<FeaturedProducts />}/>
+            <Route path='new' element={<NewProducts />} />
+          </Route>
+          <Route path='users' element={<Users />}>
+          <Route path=':userId' element={<UserDetails />} />
+          <Route path='admin' element={<Admin />} />
+          </Route>
+          <Route path='profile' element={<RequireAuth><Profiles /></RequireAuth>} />
+          <Route path='login' element={<Login />} />
+        </Routes>
+      </AppProviders>
+    </AuthProvider>
   );
 }
 

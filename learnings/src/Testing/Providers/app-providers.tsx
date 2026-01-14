@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 const theme = createTheme({
     palette:{
-        mode: 'dark'
+        mode: 'light'
     }
 })
 function AppProviders({children}: {children: React.ReactNode}) {
