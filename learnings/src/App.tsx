@@ -30,7 +30,7 @@ import Counter from './Testing/Counter/Counter';
 import AppProviders from './Testing/Providers/app-providers';
 import MuiMode from './Testing/mui/mui-mode';
 import Home from './Router/Home';
-import About from './Router/About';
+// import About from './Router/About';
 import Navbar from './Router/Navbar';
 import OrderSummary from './Router/OrderSummary';
 import NoMatch from './Router/NoMatch';
@@ -40,6 +40,9 @@ import NewProducts from './Router/NewProducts';
 import { Users } from './Router/Users';
 import { UserDetails } from './Router/UserDetails';
 import { Admin } from './Router/Admin';
+import { lazy, Suspense } from 'react';
+
+const About = lazy(() => import('./Router/About'));
 
 function App() {
   const name = {
@@ -104,7 +107,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='about' element={<About />}></Route>
+        <Route path='about' element={<Suspense fallback='Loading....'> <About /> </Suspense>}></Route>
         <Route path='summary' element={<OrderSummary />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
         <Route path='products' element={<Products />}>
