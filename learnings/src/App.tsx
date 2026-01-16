@@ -108,8 +108,8 @@ function App() {
           <Counter />
           <MuiMode />
         </div>  */}
-        <Navbar />
-        <Routes>
+        {/* <Navbar /> */}
+        {/* <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='about' element={<Suspense fallback='Loading....'> <About /> </Suspense>}></Route>
           <Route path='summary' element={<OrderSummary />}></Route>
@@ -125,7 +125,7 @@ function App() {
           </Route>
           <Route path='profile' element={<RequireAuth><Profiles /></RequireAuth>} />
           <Route path='login' element={<Login />} />
-        </Routes>
+        </Routes> */}
       </AppProviders>
     </AuthProvider>
   );
