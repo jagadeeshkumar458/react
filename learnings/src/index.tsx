@@ -9,9 +9,7 @@ import { ordered as cakeOrdered, restocked as cakeRestocked} from './Redux-toolk
 import { ordered as iceCremOrdered, restocked as icecreamRestocked } from './Redux-toolkit/features/icecream/icecreamSlice';
 
 console.log('Initial State', store.getState())
-const unsubscribe = store.subscribe(() => {
-  console.log('Updated state', store.getState())
-})
+const unsubscribe = store.subscribe(() => {})
 store.dispatch(cakeOrdered())
 store.dispatch(cakeOrdered())
 store.dispatch(cakeOrdered())
