@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type InitialState = {
+  numOfCakes: number
+}
+
+const initialState: InitialState = {
   numOfCakes: 10,
 };
 
@@ -13,7 +18,7 @@ const cakeSlice = createSlice({
       // USES IMMER LIBRARY
       state.numOfCakes--;
     },
-    restocked: (state, action) => {
+    restocked: (state, action: PayloadAction<number>) => {
       state.numOfCakes += action.payload;
     },
   },
