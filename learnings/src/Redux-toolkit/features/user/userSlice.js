@@ -8,11 +8,13 @@ const initialState = {
   error: "",
 };
 
+// GENERATES PENDING, FULFILLED, REJECTED ACTION TYPES
 export const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
   return axios
-    .get("https://jsonplaceholder.tyeicode.com/usersasd")
+    .get("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.data.map((user) => user.id));
 });
+// IT WILL AUTOMATICALLY DISPATCH LIFECYCLE ACTIONS BASED ON THE RETURNED PRMOISE
 
 const userSlice = createSlice({
   name: "user",
