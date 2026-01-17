@@ -5,16 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from './Redux-toolkit/store';
-import { ordered, restocked } from './Redux-toolkit/features/cake/cakeSlice';
+import { ordered as cakeOrdered, restocked as cakeRestocked} from './Redux-toolkit/features/cake/cakeSlice';
+import { ordered as iceCremOrdered, restocked as icecreamRestocked } from './Redux-toolkit/features/icecream/icecreamSlice';
 
 console.log('Initial State', store.getState())
 const unsubscribe = store.subscribe(() => {
   console.log('Updated state', store.getState())
 })
-store.dispatch(ordered())
-store.dispatch(ordered())
-store.dispatch(ordered())
-store.dispatch(restocked(3))
+store.dispatch(cakeOrdered())
+store.dispatch(cakeOrdered())
+store.dispatch(cakeOrdered())
+store.dispatch(cakeRestocked(3))
+store.dispatch(iceCremOrdered())
+store.dispatch(iceCremOrdered())
+store.dispatch(icecreamRestocked(2))
 unsubscribe()
 
 const root = ReactDOM.createRoot(

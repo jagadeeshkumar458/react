@@ -11,4 +11,7 @@ const store = configureStore({
   },
 });
 
+// WITH REDUX TOOLKIT THE CONFIGURE STORE FUNCTION WILL HANDLE COMBINIG
+// REDUCERS UNDER THE HOOD
+
 export default store;
