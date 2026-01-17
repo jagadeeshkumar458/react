@@ -21,6 +21,11 @@ const icecreamSlice = createSlice({
       state.numOfIcecreams--;
     });
   },
+  //   extraReducers: {
+  //     ["cake/ordered"]: (state) => {
+  //       state.numOfIcecreams--;
+  //     },
+  //   },
 });
 
 export default icecreamSlice.reducer;
