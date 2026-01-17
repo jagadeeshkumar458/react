@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import store from './Redux-toolkit/store';
+import { ordered, restocked } from './Redux-toolkit/features/cake/cakeSlice';
+
+console.log('Initial State', store.getState())
+const unsubscribe = store.subscribe(() => {
+  console.log('Updated state', store.getState())
+})
+store.dispatch(ordered())
+store.dispatch(ordered())
+store.dispatch(ordered())
+store.dispatch(restocked(3))
+unsubscribe()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
