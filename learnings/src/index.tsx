@@ -5,20 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from './Redux-toolkit/store';
-import { ordered as cakeOrdered, restocked as cakeRestocked} from './Redux-toolkit/features/cake/cakeSlice';
-import { ordered as iceCremOrdered, restocked as icecreamRestocked } from './Redux-toolkit/features/icecream/icecreamSlice';
-import { fetchUsers } from './Redux-toolkit/features/user/userSlice';
+// import { ordered as cakeOrdered, restocked as cakeRestocked} from './Redux-toolkit/features/cake/cakeSlice';
+// import { ordered as iceCremOrdered, restocked as icecreamRestocked } from './Redux-toolkit/features/icecream/icecreamSlice';
+// import { fetchUsers } from './Redux-toolkit/features/user/userSlice';
+import { Provider } from 'react-redux';
 
-console.log('Initial State', store.getState())
-const unsubscribe = store.subscribe(() => {})
-store.dispatch(cakeOrdered())
-store.dispatch(cakeOrdered())
-store.dispatch(cakeOrdered())
-store.dispatch(cakeRestocked(3))
-store.dispatch(iceCremOrdered())
-store.dispatch(iceCremOrdered())
-store.dispatch(icecreamRestocked(2))
-store.dispatch(fetchUsers())
+// console.log('Initial State', store.getState())
+// const unsubscribe = store.subscribe(() => {})
+// store.dispatch(cakeOrdered())
+// store.dispatch(cakeOrdered())
+// store.dispatch(cakeOrdered())
+// store.dispatch(cakeRestocked(3))
+// store.dispatch(iceCremOrdered())
+// store.dispatch(iceCremOrdered())
+// store.dispatch(icecreamRestocked(2))
+// store.dispatch(fetchUsers())
 // unsubscribe()
 
 const root = ReactDOM.createRoot(
@@ -27,7 +28,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

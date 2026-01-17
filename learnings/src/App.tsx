@@ -45,6 +45,9 @@ import Profiles from './Router/Profiles';
 import { AuthProvider } from './Router/Auth';
 import Login from './Router/Login';
 import RequireAuth from './Router/RequireAuth';
+import { CakeView } from './Redux-toolkit/features/cake/CakeView';
+import { IcecreamView } from './Redux-toolkit/features/icecream/IcecreamView';
+import { UserView } from './Redux-toolkit/features/user/UserView';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -126,6 +129,9 @@ function App() {
           <Route path='profile' element={<RequireAuth><Profiles /></RequireAuth>} />
           <Route path='login' element={<Login />} />
         </Routes> */}
+        <CakeView />
+        <IcecreamView />
+        <UserView />
       </AppProviders>
     </AuthProvider>
   );
