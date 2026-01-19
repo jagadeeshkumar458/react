@@ -1,5 +1,8 @@
 const redux = require("redux");
+const thunkMiddleware = require("redux-thunk").thunk;
+const axios = require("axios");
 const createStore = redux.createStore;
+const applyMiddleware = redux.applyMiddleware;
 
 const initialState = {
   loading: false,
@@ -17,7 +20,7 @@ const fetchUsersRequest = () => {
   };
 };
 
-const fetechUsersSuccess = (users) => {
+const fetchUsersSuccess = (users) => {
   return {
     type: FETCH_USERS_SUCCEEDED,
     payload: users,
@@ -26,7 +29,7 @@ const fetechUsersSuccess = (users) => {
 
 const fetchUsersFailed = (error) => {
   return {
-    tyep: FETCH_USERS_FAILED,
+    type: FETCH_USERS_FAILED,
     payload: error,
   };
 };
@@ -53,4 +56,26 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
+// THUNK ALLOWS ACTION CREATEORS TO RETURN FUNCTION INSTEAD OF OBJECT AND THIS
+// FUNCTION NO NEED TO BE PURE, IT IS ALLOWED TO HAVE SIDE EFFECTS LIKE ASYNCHRONOUS
+// CALLS AND IT CAN ALOS DISPATCH OTHER ACTIONS AS IT RECEIVES DISPATCH AS ARGUMENT
+const fetchUsers = () => {
+  return function (dispatch) {
+    dispatch(fetchUsersRequest());
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        const users = response.data.map((user) => user.id);
+        dispatch(fetchUsersSuccess(users));
+      })
+      .catch((err) => {
+        dispatch(fetchUsersFailed(err.message));
+      });
+  };
+};
+
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
+store.subscribe(() => {
+  console.log(store.getState());
+});
+store.dispatch(fetchUsers());
