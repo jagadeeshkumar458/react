@@ -109,6 +109,14 @@ const icecreamReducer = (state = icecreamInitialState, action) => {
         ...state,
         numOfIcecreams: state.numOfIcecreams + action.payload,
       };
+    // WITH REDUX EVEN THOUGH WE HAVE SEPERATE REDUCERS, WHEN AN ACTION HAS DISPATCHED
+    // BOTH OF THEM WILL RECEIVE THE ACTION AND ONLY ONE OF THE ACTS OF THE ACTION
+    // WHILE THE OTHER IGNORES IT
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfIcecreams: state.numOfIcecreams - 1,
+      };
     default:
       return state;
   }
