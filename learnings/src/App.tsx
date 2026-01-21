@@ -51,6 +51,7 @@ import { UserView } from './Redux-toolkit/features/user/UserView';
 import ClassCounter from './Hooks/ClassCounter';
 import HookCounter from './Hooks/HookCounter';
 import HookCounterTwo from './Hooks/HookCounterTwo';
+import HookCounterThree from './Hooks/HookCounterThree';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -137,6 +138,7 @@ function App() {
         <UserView /> */}
         <HookCounter />
         <HookCounterTwo />
+        <HookCounterThree />
       </AppProviders>
     </AuthProvider>
   );
