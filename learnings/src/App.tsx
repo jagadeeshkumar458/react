@@ -50,6 +50,7 @@ import { IcecreamView } from './Redux-toolkit/features/icecream/IcecreamView';
 import { UserView } from './Redux-toolkit/features/user/UserView';
 import ClassCounter from './Hooks/ClassCounter';
 import HookCounter from './Hooks/HookCounter';
+import HookCounterTwo from './Hooks/HookCounterTwo';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -135,6 +136,7 @@ function App() {
         <IcecreamView />
         <UserView /> */}
         <HookCounter />
+        <HookCounterTwo />
       </AppProviders>
     </AuthProvider>
   );
