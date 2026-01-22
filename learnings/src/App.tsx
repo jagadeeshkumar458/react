@@ -55,6 +55,8 @@ import HookCounterThree from './Hooks/HookCounterThree';
 import HookCounterFour from './Hooks/HookCounterFour';
 import ClassCounterOne from './Hooks/ClassCounterOne';
 import HookCounterOne from './Hooks/HookCounterOne';
+import ClassMouse from './Hooks/ClassMouse';
+import HookMouse from './Hooks/HookMouse';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -145,6 +147,8 @@ function App() {
         <HookCounterFour />
         <ClassCounterOne />
         <HookCounterOne />
+        <ClassMouse />
+        <HookMouse />
       </AppProviders>
     </AuthProvider>
   );
