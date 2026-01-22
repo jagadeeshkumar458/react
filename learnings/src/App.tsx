@@ -57,6 +57,7 @@ import ClassCounterOne from './Hooks/ClassCounterOne';
 import HookCounterOne from './Hooks/HookCounterOne';
 import ClassMouse from './Hooks/ClassMouse';
 import HookMouse from './Hooks/HookMouse';
+import MouseContainer from './Hooks/MouseContainer';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -149,6 +150,7 @@ function App() {
         <HookCounterOne />
         <ClassMouse />
         <HookMouse />
+        <MouseContainer />
       </AppProviders>
     </AuthProvider>
   );
