@@ -60,6 +60,7 @@ import HookMouse from './Hooks/HookMouse';
 import MouseContainer from './Hooks/MouseContainer';
 import IntervalClassCounter from './Hooks/IntervalClassCounter';
 import IntervalHookCounter from './Hooks/IntervalHookCounter';
+import DataFetching from './Hooks/DataFetching';
 
 const About = lazy(() => import('./Router/About'));
 
@@ -155,6 +156,7 @@ function App() {
         <MouseContainer />
         <IntervalClassCounter />
         <IntervalHookCounter />
+        <DataFetching />
       </AppProviders>
     </AuthProvider>
   );
