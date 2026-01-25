@@ -40,7 +40,7 @@ import NewProducts from './Router/NewProducts';
 import { Users } from './Router/Users';
 import { UserDetails } from './Router/UserDetails';
 import { Admin } from './Router/Admin';
-import { lazy, Suspense } from 'react';
+import { createContext, lazy, Suspense } from 'react';
 import Profiles from './Router/Profiles';
 import { AuthProvider } from './Router/Auth';
 import Login from './Router/Login';
@@ -61,8 +61,11 @@ import MouseContainer from './Hooks/MouseContainer';
 import IntervalClassCounter from './Hooks/IntervalClassCounter';
 import IntervalHookCounter from './Hooks/IntervalHookCounter';
 import DataFetching from './Hooks/DataFetching';
+import ComponentC from './Hooks/ComponentC';
 
 const About = lazy(() => import('./Router/About'));
+export const UserContext = createContext('');
+export const ChannelContext = createContext('');
 
 function App() {
   const name = {
@@ -157,6 +160,11 @@ function App() {
         <IntervalClassCounter />
         <IntervalHookCounter />
         <DataFetching />
+        <UserContext.Provider value={'Jagadeesh'}>
+          <ChannelContext.Provider value={'codevolution'}>
+            <ComponentC />
+        </ChannelContext.Provider>
+        </UserContext.Provider>
       </AppProviders>
     </AuthProvider>
   );
