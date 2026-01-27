@@ -62,6 +62,7 @@ import IntervalClassCounter from './Hooks/IntervalClassCounter';
 import IntervalHookCounter from './Hooks/IntervalHookCounter';
 import DataFetching from './Hooks/DataFetching';
 import ComponentC from './Hooks/ComponentC';
+import CounterOne from './Hooks/CounterOne';
 
 const About = lazy(() => import('./Router/About'));
 export const UserContext = createContext('');
@@ -165,6 +166,7 @@ function App() {
             <ComponentC />
         </ChannelContext.Provider>
         </UserContext.Provider>
+        <CounterOne />
       </AppProviders>
     </AuthProvider>
   );
