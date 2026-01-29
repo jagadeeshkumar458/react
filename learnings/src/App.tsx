@@ -64,6 +64,7 @@ import DataFetching from './Hooks/DataFetching';
 import ComponentC from './Hooks/ComponentC';
 import CounterOne from './Hooks/CounterOne';
 import CounterTwo from './Hooks/CounterTwo';
+import CounterThree from './Hooks/CounterThree';
 
 const About = lazy(() => import('./Router/About'));
 export const UserContext = createContext('');
@@ -169,6 +170,7 @@ function App() {
         </UserContext.Provider>
         <CounterOne />
         <CounterTwo />
+        <CounterThree />
       </AppProviders>
     </AuthProvider>
   );
