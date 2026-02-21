@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ComponentF from "./ComponentF";
-import { ChannelContext, UserContext } from "../App";
+import { ChannelContext, UserContext } from "./HooksComponents";
 
 function ComponentE() {
   const user = useContext(UserContext);

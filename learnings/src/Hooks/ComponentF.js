@@ -1,5 +1,5 @@
 import React from "react";
-import { ChannelContext, UserContext } from "../App";
+import { ChannelContext, UserContext } from "./HooksComponents";
 
 function ComponentF() {
   return (
