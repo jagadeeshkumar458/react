@@ -23,6 +23,7 @@ import ComponentC from "./ComponentC";
 import DataFetchingOne from "./DataFetchingOne";
 import DataFetchingTwo from "./DataFetchingTwo";
 import ParentComponent from "./ParentComponent";
+import Counter from "./Counter";
 
 export const UserContext = createContext("");
 export const ChannelContext = createContext("");
@@ -80,6 +81,7 @@ function HooksComponents() {
       <DataFetchingOne />
       <DataFetchingTwo />
       <ParentComponent />
+      <Counter />
     </div>
   );
 }
