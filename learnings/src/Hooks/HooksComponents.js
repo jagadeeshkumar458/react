@@ -20,6 +20,8 @@ import { createContext } from "react";
 import ComponentA from "./ComponentA";
 import ComponentB from "./ComponentB";
 import ComponentC from "./ComponentC";
+import DataFetchingOne from "./DataFetchingOne";
+import DataFetchingTwo from "./DataFetchingTwo";
 
 export const UserContext = createContext("");
 export const ChannelContext = createContext("");
@@ -74,6 +76,8 @@ function HooksComponents() {
           <ComponentC />
         </div>
       </CountContext.Provider>
+      <DataFetchingOne />
+      <DataFetchingTwo />
     </div>
   );
 }
