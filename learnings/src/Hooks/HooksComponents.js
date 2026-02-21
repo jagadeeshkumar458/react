@@ -31,6 +31,7 @@ import DocTitleOne from "./DocTitleOne";
 import DocTitleTwo from "./DocTitleTwo";
 import Counter1 from "./Counter1";
 import Counter2 from "./Counter2";
+import UserForm from "./UserForm";
 
 export const UserContext = createContext("");
 export const ChannelContext = createContext("");
@@ -96,6 +97,7 @@ function HooksComponents() {
       <DocTitleTwo />
       <Counter1 />
       <Counter2 />
+      <UserForm />
     </div>
   );
 }
