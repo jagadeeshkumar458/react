@@ -22,6 +22,7 @@ import ComponentB from "./ComponentB";
 import ComponentC from "./ComponentC";
 import DataFetchingOne from "./DataFetchingOne";
 import DataFetchingTwo from "./DataFetchingTwo";
+import ParentComponent from "./ParentComponent";
 
 export const UserContext = createContext("");
 export const ChannelContext = createContext("");
@@ -78,6 +79,7 @@ function HooksComponents() {
       </CountContext.Provider>
       <DataFetchingOne />
       <DataFetchingTwo />
+      <ParentComponent />
     </div>
   );
 }
