@@ -27,6 +27,8 @@ import Counter from "./Counter";
 import FocusInput from "./FocusInput";
 import ClassTimer from "./ClassTimer";
 import HookTimer from "./HookTimer";
+import DocTitleOne from "./DocTitleOne";
+import DocTitleTwo from "./DocTitleTwo";
 
 export const UserContext = createContext("");
 export const ChannelContext = createContext("");
@@ -88,6 +90,8 @@ function HooksComponents() {
       <FocusInput />
       <ClassTimer />
       <HookTimer />
+      <DocTitleOne />
+      <DocTitleTwo />
     </div>
   );
 }
